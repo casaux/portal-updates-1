@@ -1,0 +1,711 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1">
+
+<title>myCASA</title>
+
+	<link rel="stylesheet" href="furnace.min.css">
+	<link rel="stylesheet" href="lead.css">
+	<link rel="stylesheet" href="forms.css">
+	<script type="text/javascript" src="furnace.min.js"></script>
+
+	<script src="jquery.min.js"></script>
+
+   <script src="jquery.js"></script>
+
+<style type="text/css">
+
+	/*Form help*/
+label,.label{
+  display: block!important;
+  max-width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.form-text{
+  color: #676767;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.form-section{
+  display: block;
+  max-width: 100%;
+  width:100%;
+  float:left;
+  margin:0 0 2rem 0;
+}
+.form-required{
+  color: #bc111e;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+.au-control-input {font-weight:normal;}
+/*Panel*/
+.panel-id{
+	font-size: 1rem;
+	line-height: 1.5;
+	display: block;
+	border: 1px solid #cacaca;
+	background-color: #f5f5f5;
+	padding: .8rem;
+	margin-top:1rem;
+	width:100%;
+	float:left;
+}
+.panel-id-v5{
+	font-size: 1rem;
+	line-height: 1.5;
+	display: block;
+	/*border: 1px solid #cacaca;
+	background-color: #f5f5f5;
+	padding: .8rem;*/
+	margin-top:1rem;
+	margin-bottom:.5rem;
+	width:100%;
+	float:left;
+}
+.panel-id .au-control-input__text{
+  padding-top:0;
+}
+.panel-id.complete {
+	border-color: #0cac78;
+	background-color:#f4fbf8;
+}
+.padding-top-0{padding-top:0px!important;}
+.margin-top-0{margin-top:0!important;}
+.complete::before {
+	content:'Complete';
+	font-weight:600;
+	color: #0cac78;
+	display:block;
+}
+.doc-name{
+  width:80%;
+  float:left;
+}
+.points{
+  width:15%;
+  float:left;
+  font-weight:500;
+  padding: .2rem 0;
+}
+.online{
+  font-weight: 500;
+}
+.certified{
+  font-weight: 500;
+}
+.form-navigation{
+  float:left;
+}
+.add-points {font-weight: 600;}
+p, .au-callout{display: block;width:100%;}
+/* Clear fix */
+.clearfix {
+  overflow: auto;
+  zoom:1;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile~label {
+    color:#ffffff;
+    padding:.8rem;
+    display:inline-block;
+    border-radius: 4px;
+    background-color: #00698f;
+    border: 3px solid #00698f;
+    cursor: pointer;
+    vertical-align: middle;
+    width:30%;
+    text-align:center;
+}
+
+.inputfile:focus ~ label,
+.inputfile ~ label:hover {
+  background-color: #313131;
+  border-color: #313131;
+  text-decoration: underline;
+  color: #ffffff;
+}
+.filename{
+  padding: 1rem;
+  font-size: 16px;
+  display: block;
+  background-color: whitesmoke;
+  margin: 1rem 0;
+}
+.filename a {float:right;}
+ul li {margin-bottom:.5rem;/*font-weight: 500;*/}
+.moreDoc{
+	display:block;
+	float:left;
+	width:100%;
+}
+.au-body .au-accordion__title, .au-accordion__title {font-size:1rem;}
+</style>
+
+
+</head>
+
+<body class="live-demo au-body au-grid arn-application js">
+
+
+<main class="au-grid">
+
+
+	<div class="header">
+		<div class="container">
+			<div class="row">
+					<div class="logo au-body au-body--dark">
+						<a href="../index.html"><img src="CASALOGO-white-i.svg" width="256"></a>
+					</div>
+					<div class="user">
+						<div class="au-body au-body--dark">
+						   <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+	<div class=container>
+		<style>
+			.banner {padding-left: 25px;}
+			.banner {padding-top: 10px;}
+			.banner {padding-bottom: 10px;}
+
+		</style>
+		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+	</div>
+	</div>
+
+
+	<div class="body">
+		<div class="container">
+			<div class="col-xs-6">
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+			  <ul class="au-link-list au-link-list--inline">
+				<li><a href="welcome.html">myCASA</a></li>
+				<li>ARN application</li>
+			  </ul>
+			</nav>
+
+		<header class="au-header padding-bottom-1x" role="banner">
+				<h1 class="au-header-heading">Your identification</h1>
+				<a class="au-direction-link au-direction-link--left" href="arn3.html">Back</a>
+  	</header>
+		<!--<div class="au-callout" aria-label="Callout description1">
+		  <strong>CASA requires 100 points of identification (ID) to issue an individual with an ARN.</strong><br>
+
+			<p>You need to provide:</p>
+			<ul class="m-t-1">
+				<li>At least 1 primary ID and 1 secondary ID</li>
+			</ul>
+			<p>How CASA will check your ID:</p>
+			<ul class="m-t-1">
+				<li>
+					<strong>Online ID Check</strong><br>
+					<p class="form-text margin-top-0">Most Australian-issued IDs can be verified in real time. All you have to do is enter you ID details and CASA will confirm that your information matches the records of <a href="https://www.dvs.gov.au/Pages/default.aspx" target="_blank">Document Verification Service (DVS).</a></p><br>
+				</li>
+				<li>
+					<strong>Manual ID Check</strong><br>
+					<p class="form-text margin-top-0">Upload a <a href="https://www.casa.gov.au/standard-page/people-who-can-certify-proof-identity-documents" target="_blank">Certified copy</a> and we will check your identification manually.
+					Your ARN will be issued within <strong>5 business days</strong> of your application being submitted.</p>
+				</li>
+			</ul>
+	</div>-->
+
+<div class="au-callout">
+				You must provide 100 points of identification with at least <strong>one primary document</strong> from the list below.<br /><br />
+	Some Australian-issued identification types can be verified instantly. All you have to do is enter the details of your document during the next step.
+				</div>
+
+
+				<p class="form-text margin-top-0"></p>
+<br>
+<div style="padding-left:1rem;padding-top:1rem;">
+	<div>
+<h4>Primary identification with instant verification</h4>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="70">
+				<div class="au-control-input__text padding-top-0">Australian passport<br>
+					<span class="form-text">Current, or expired within the previous two years, but not cancelled</span>
+				</div>
+			</label>
+		</div>
+		<div class="points">70 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="70">
+				<span class="au-control-input__text">Australian citizenship certificate</span>
+			</label>
+		</div>
+		<div class="points">70 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="70">
+				<div class="au-control-input__text">Australian birth certificate<br>
+			 </div>
+			</label>
+		</div>
+		<div class="points">70 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+				<span class="au-control-input__text">Australian drivers licence</span>
+			</label>
+		</div>
+		<div class="points">40 Points</div>
+	<br><br>
+</section>
+</div>
+<p>Don't have the above documents? You can view more below.</p>
+<br>
+<div class="moreDoc">
+<section class="au-accordion">
+  <a href="#accordion-group-1" class="au-accordion__title js-au-accordion au-accordion--closed" aria-controls="accordion-group-1" aria-expanded="false" aria-selected="false" role="tab" onclick="return AU.accordion.Toggle( this )">
+		More primary identification
+	</a>
+
+  <div class="au-accordion__body au-accordion--closed" id="accordion-group-1">
+    <div class="au-accordion__body-wrapper">
+			<!--<div id="more">-->
+				<h4>Manual verification</h4>
+				<p class="form-text margin-top-0">The following types of identification are acceptable but you must upload a <a href="https://www.casa.gov.au/standard-page/people-who-can-certify-proof-identity-documents" target="_blank">certified copy</a>. Your ARN will then be issued within <strong>5 business days</strong> of your application being submitted.</p>
+		<p class="form-text">
+		Note: Any foreign documents must have an official English translation attached. Only translations performed by a translator accredited by the <a href="https://www.naati.com.au/">National Accreditation Authority for Translators and Interpreters</a> (NAATI) are acceptable. 
+
+
+		</p>
+		<br>
+
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="70">
+							<div class="au-control-input__text">Foreign passport (Current)</div>
+						</label>
+					</div>
+					<div class="points">70 Points</div>
+			</section>
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="70">
+							<div class="au-control-input__text">Foreign birth certificate</div>
+						</label>
+					</div>
+					<div class="points">70 Points</div>
+			</section>
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="70">
+							<div class="au-control-input__text">Certificate of identity issued by the Australian Government to refugee and non-Australian citizens for entry to Australia</div>
+						</label>
+					</div>
+					<div class="points">70 Points</div>
+			</section>
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+							<div class="au-control-input__text">Current (Australian) tertiary student identification card</div>
+						</label>
+					</div>
+					<div class="points">40 Points</div>
+			</section>
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+							<div class="au-control-input__text">Defence force identity card (w/photo or signature)</div>
+						</label>
+					</div>
+					<div class="points">40 Points</div>
+			</section>
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+							<div class="au-control-input__text">Government employee ID (Australian federal/state/territory)</div>
+						</label>
+					</div>
+					<div class="points">40 Points</div>
+			</section>
+			<section class="panel-id-v5">
+					<div class="doc-name">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+							<div class="au-control-input__text">Photo identification card issued for Australian regulatory purposes (eg aviation/maritime security identification, security industry)</div>
+						</label>
+					</div>
+					<div class="points">40 Points</div>
+			</section>
+			<!--</div>-->
+    </div>
+  </div>
+</section>
+</div>
+
+
+</div>
+
+
+<div style="padding-left:1rem;padding-top:1rem;">
+<p class="m-t-1">&nbsp;</p>
+
+<h4>Secondary identification with instant verification</h4>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+				<div class="au-control-input__text">Medicare Card</div>
+			</label>
+		</div>
+		<div class="points">40 Points</div>
+</section>
+<section class="panel-id-v5">
+		<div class="doc-name">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+				<div class="au-control-input__text">Australian marriage certificate (registry issue only)</div>
+			</label>
+		</div>
+		<div class="points">25 Points</div>
+	<br><br>
+</section>
+<p>Don't have the above documents? You can view more below.</p>
+<br>
+<div class="moreDoc">
+<section class="au-accordion">
+  <a href="#accordion-group-2" class="au-accordion__title js-au-accordion au-accordion--closed" aria-controls="accordion-group-2" aria-expanded="false" aria-selected="false" role="tab" onclick="return AU.accordion.Toggle( this )">
+    More secondary identification
+  </a>
+
+  <div class="au-accordion__body  au-accordion--closed" id="accordion-group-2">
+    <div class="au-accordion__body-wrapper">
+			<h4>Manual verification</h4>
+			<p class="form-text margin-top-0">The following types of identification are acceptable but you must upload a <a href="https://www.casa.gov.au/standard-page/people-who-can-certify-proof-identity-documents" target="_blank">certified copy</a>. Your ARN will then be issued within <strong>5 business days</strong> of your application being submitted.</p>
+		
+		<p class="form-text">
+		Note: Any foreign documents must have an official English translation attached. Only translations performed by a translator accredited by the <a href="https://www.naati.com.au/">National Accreditation Authority for Translators and Interpreters</a> (NAATI) are acceptable. 
+
+
+		</p>
+<br>
+		<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+					<div class="au-control-input__text">Centrelink card (with reference number)</div>
+				</label>
+			</div>
+			<div class="points">40 Points</div>
+	</section>
+			<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="40">
+					<div class="au-control-input__text">Department of Veteran Affairs card</div>
+				</label>
+			</div>
+			<div class="points">40 Points</div>
+	</section>
+		<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Birth card (NSW BDM only)</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Credit card or account card</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Australian divorce certificate (registry issue only)</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Bank statement</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Property lease agreement - current address</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Taxation assessment notice</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Australian mortgage documents</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Rating authority - e.g. land rates</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Utility bill - electricity, gas, telephone (less than 12 months old)</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text">Reference from indigenous organisation</div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+	<section class="panel-id-v5">
+			<div class="doc-name">
+				<label class="au-control-input">
+					<input class="au-control-input__input" type="checkbox" name="checkbox-ex" alt="25">
+					<div class="au-control-input__text paddint-top-0">Documents issued outside Australia <br>
+						<span class="form-text">(equivalent to Australian documents). Must have official translation attached</span></div>
+				</label>
+			</div>
+			<div class="points">25 Points</div>
+	</section>
+    </div>
+  </div>
+</section>
+</div>
+
+
+
+
+
+<!--<p class="clearfix">
+	<br />
+	<span id="guidance2">Don't have the above documents? You can view more below.</span>
+	<br>
+<a class="au-btn au-btn--secondary" href="#" id="seeMoresecond"><span>More</span> document types</a>
+</p>--> 
+
+
+</div>
+<p>&nbsp;</p>
+
+
+				<div class="form-navigation">
+
+
+
+
+					<p>
+
+						<span id="points-needed">You have <strong><span class="total-points">0</span> points</strong> of identification selected. Before continuing please select at least one piece of identification.
+						</span>
+
+						<span id="points-ok">You have <strong><span class="total-points">0</span> points</strong> of identification selected
+						 and can now continue with your application.
+
+							<br><br>
+				<a class="au-btn" href="australia-passport.html" id="next">Next</a>
+						</span>
+
+
+					</p>
+
+
+
+					<hr />
+
+<a href="saved.html" class="au-btn au-btn--secondary">
+  Save and exit
+</a>&nbsp; to continue this application later
+
+				</div>
+
+</form>
+</div>
+
+			<!--
+			<div class="row">
+			  <div class="col-xs-4"><span>4</span></div>
+			  <div class="col-xs-4"><span>4</span></div>
+			  <div class="col-xs-4"><span>4</span></div>
+			</div>-->
+
+		</div>
+	</div>
+
+<div class="footer">
+		<div class="footer-wrapper">
+			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+		</div>
+	</div>
+
+
+</main>
+
+<script>
+
+
+
+		$("#points-ok").css("display","none");
+
+		var points=0;
+
+		$("input[type='checkbox']").click(function(){
+
+			if($(this).prop('checked')){
+
+				points+=parseInt($(this).attr("alt"));
+
+
+			} else {
+
+				points-=parseInt($(this).attr("alt"));
+
+			}
+
+			$(".total-points").html(points);
+
+			if(points > 99){
+
+				$("#points-needed").css("display","none");
+				$("#points-ok").css("display","block");
+
+				$("input[type='checkbox']").prop('disabled',true);
+				$("input[type='checkbox']:checked").prop('disabled',false);
+
+				$("#seeMore").css("opacity",0.3);
+				$("#seeMoresecond").css("opacity",0.3);
+
+			} else {
+
+				$("#points-needed").css("display","block");
+				$("#points-ok").css("display","none");
+
+				$("input[type='checkbox']").prop('disabled',false);
+
+				$("#seeMore").css("opacity",1);
+				$("#seeMoresecond").css("opacity",1);
+
+			}
+
+		});
+
+
+
+
+
+
+$('#more, #alert').hide();
+$('#seeMore').click(function(){
+
+	if($('#seeMore span').html()=="More"){
+	   $('#more').show();
+		$('#seeMore span').html("Fewer");
+		$("#guidance1").hide();
+
+	 } else {
+	   $('#more').hide();
+		$('#seeMore span').html("More");
+		  $("#guidance1").show();
+	 }
+
+
+	//$('#seeMore').hide();
+	return false;
+});
+$('#moresecond, #alert').hide();
+$('#seeMoresecond').click(function(){
+
+if($('#seeMoresecond span').html()=="More"){
+	   $('#moresecond').show();
+		$('#seeMoresecond span').html("Fewer");
+		$("#guidance2").hide();
+
+
+	 } else {
+	   $('#moresecond').hide();
+		$('#seeMoresecond span').html("More");
+		 $("#guidance2").show();
+	 }
+	return false;
+});
+
+
+
+	var type = window.location.hash.substr(1);
+	//alert (type);
+	if (type=='passport'){
+		$('#passport').addClass('complete');
+		$('html').offset({top:0});
+		document.getElementById("points").textContent="70 Points";
+	}
+</script>
+</body>
+</html>
