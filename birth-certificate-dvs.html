@@ -282,6 +282,20 @@ $('#validate').bind("click",function(){
 			
 			// registration date
 			
+			
+ var monthValue = $("#r-qld-registration-date-mm").val();
+    var yearValue =$("#r-qld-registration-date-yyyy").val();
+    var dateValue = $("#r-qld-registration-date-dd").val();
+    var regdateValid = moment([yearValue, monthValue - 1, dateValue, 00, 00, 00, 00]).isValid();
+    if (!regdateValid) {
+        return false;
+    }
+   
+    return true;
+			
+			alert( moment([yearValue, monthValue - 1, dateValue, 00, 00, 00, 00]).isValid());
+			
+			
 			registration_date = $("#r-qld-registration-date-yyyy").val()+"-"+$("#r-qld-registration-date-mm").val()+"-"+$("#r-qld-registration-date-dd").val();
 
 			
