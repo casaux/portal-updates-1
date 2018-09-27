@@ -75,10 +75,11 @@
 				
 				
 				<label for="given-name-input">Given names</label>
+				<div class="form-text">Please enter all given names as written on your birth certificate, including any middle names</div>
 				<input class="au-text-input au-text-input--block" name="given-name-input" id="given-name-input" type="text" value="">
 				<br>
 				
-				<label for="family-name-input">Family names</label>
+				<label for="family-name-input">Family name</label>
 				<input class="au-text-input au-text-input--block" name="family-name-input" id="family-name-input" type="text" value="">
 				<br>
 				
@@ -87,24 +88,26 @@
 			
 				<div class="form-section date-entry">
 				<p class="label">Date of birth</p>
+				<div class="form-text">For example, 31 01 1980</div>
+
 					<div class="date date-day">
 						<label for="text-input-block1" class="form-text">Day</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
+						<input class="au-text-input au-text-input--block" name="text-input-block"  placeholder="DD" id="text-input-block1" type="text" value="">
 					</div>
 					<div class="date date-month">
 						<label for="text-input-block2" class="form-text">Month</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="">
+						<input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="text-input-block2" type="text" value="">
 						</div>
 					<div class="date date-year">
 						<label for="text-input-block3" class="form-text">Year</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
+						<input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="text-input-block3" type="text" value="">
 						</div>
+					<br style="clear:both;" />
 				</div>
-				<div class="form-text">For example, 31 01 1980</div>
-				<br /><br />
-
+				<br /><br /><br style="clear:both;" />
 
 				
+				&nbsp;<br /><br />
 			
 				<label for="select-state">State or territory</label>
 					<select id="select-state" class="au-select au-select--block">
@@ -127,54 +130,66 @@
 				
 				<p class="au-callout">Queensland birth certificates from 1st January 1941 can be verified online. If you have an older document, please choose another type of identification.<br /><br />
 				You can verify your birth certificate with either the Date of Registration or Certificate Number below.
-				<br /><br />
-				Certificate numbers are printed at the bottom of birth certificates. If you're having problems finding the right number (which may happen for older certificates) you can also try entering the Date of Registration.
-				
 				</p>
 				
 				<br />
 
 				
+				<div style="background:#fff;clear:both;overflow:hidden;">
 				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="r-qld-dvs" id="r-qld-certificate-number" value="certificate-number" checked>
-				  <span class="au-control-input__text"> Certificate Number</span>
-				</label>
-				
-				<div class="form-sub-input">
-					<div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. This number must be exactly 11 digits in length.
-					</div>
-					<input class="au-text-input au-text-input--block" name="registration-number-input" id="r-qld-certificate-number-input" type="text" value="">
-					<br>
-				
-				</div>
-				
-				
-				
-				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="r-qld-dvs" id="r-qld-registration-date" value="registration-date">
+				  <input class="au-control-input__input" type="radio" name="r-qld-dvs" id="r-qld-registration-date" value="registration-date" checked>
 				  <span class="au-control-input__text"> Date of Registration</span>
 				</label>
 				
 				<div class="form-sub-input">
 					
-					<div class="form-text">Please enter your Date of Registration below in numeric format; for example 31 01 1980 for 31 December 1980.
+					<div class="form-text">Please enter your Date of Registration below in numeric format; for example 14 02 1980.
 					
 					
 					
 					<div class="form-section date-entry" style="margin-top:0.75em;padding-top:0;">
 					<div class="date date-day">
 						<label for="r-qld-registration-date-dd" class="form-text">Day</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="r-qld-registration-date-dd" type="text" value="">
+						<input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="r-qld-registration-date-dd" type="text" value="">
 					</div>
 					<div class="date date-month">
 						<label for="r-qld-reg-date-mm" class="form-text">Month</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="r-qld-registration-date-mm" type="text" value="">
+						<input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="r-qld-registration-date-mm" type="text" value="">
 						</div>
 					<div class="date date-year">
 						<label for="r-qld-reg-date-yyyy" class="form-text">Year</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="r-qld-registration-date-yyyy" type="text" value="">
+						<input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="r-qld-registration-date-yyyy" type="text" value="">
 						</div>
 				</div>
+				</div></div>
+						<br style="clear:both;" />
+					<br style="clear:both;" />
+					<br style="clear:both;" />
+				
+				<div style="background:#fff;clear:both;">
+					<label class="au-control-input">
+					  <input class="au-control-input__input" type="radio" name="r-qld-dvs" id="r-qld-certificate-number" value="certificate-number" >
+					  <span class="au-control-input__text"> Certificate Number</span>
+					</label>
+
+					<div class="form-sub-input">
+						<div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. This number must be exactly 11 digits in length.				Certificate numbers are printed at the bottom of birth certificates. If you're having problems finding the right number (which may happen for older certificates) you can also try entering the Date of Registration.
+
+						</div>
+						<input class="au-text-input au-text-input--block" name="registration-number-input" id="r-qld-certificate-number-input" type="text" value="">
+						<br>
+
+					</div>
+				</div>
+				
+				
+				
+				
+					
+						
+						
+						
+						
 				</div>
 				</div>
 				
@@ -189,9 +204,9 @@
 				
 				<a href="#" id="validate" class="au-btn au-btn--primary">Next</a>
 				
-				<br /><br /><br />
-				Correct string for DVS:
-				<div id="output"></div>
+				<br /><br /><br /><br /><br />
+				Correct string for DVS:<br />
+				<textarea id="output" style="width:400px;height:100px;font-family:monospace;"></textarea>
 				
 				
 				
@@ -237,10 +252,12 @@ state = $("#select-state option:selected").val();
 	
 if(state != 0){
 	
-	
+	$(".input-state");
 	var showState = "#input-"+state;
 	$(showState).css("display","block");
 	$("#validate").css("display","inline");
+	
+	
 	
 }	
 	
@@ -288,14 +305,10 @@ $('#validate').bind("click",function(){
  var monthValue = $("#r-qld-registration-date-mm").val();
     var yearValue =$("#r-qld-registration-date-yyyy").val();
     var dateValue = $("#r-qld-registration-date-dd").val();
-    var regdateValid = moment([yearValue, monthValue - 1, dateValue, 00, 00, 00, 00]).isValid();
-    if (!regdateValid) {
-        return false;
-    }
-   
-    return true;
+    
+			//alert(dateValue);
 			
-			alert( moment([yearValue, monthValue - 1, dateValue, 00, 00, 00, 00]));
+			//alert( moment([yearValue, monthValue - 1, dateValue, 00, 00, 00, 00]));
 			
 			
 			registration_date = $("#r-qld-registration-date-yyyy").val()+"-"+$("#r-qld-registration-date-mm").val()+"-"+$("#r-qld-registration-date-dd").val();
@@ -374,7 +387,7 @@ $('#validate').bind("click",function(){
 		
 	
 		
-	output="GivenName|"+given_names+";FamilyName|"+family_name+";RegistrationNumber|"+registration_number+";RegistrationDate"+registration_date+"|;RegistrationState|"+state+";RegistrationYear|"+registration_year+";DatePrinted|;CertificateNumber|"+certificate_number+";DateOfBirth|"+dob;
+	output="GivenName|"+given_names+";FamilyName|"+family_name+";RegistrationNumber|"+registration_number+";RegistrationDate|"+registration_date+";RegistrationState|"+state+";RegistrationYear|"+registration_year+";DatePrinted|;CertificateNumber|"+certificate_number+";DateOfBirth|"+dob;
 	$("#output").html(output);
 	
 	return false;
