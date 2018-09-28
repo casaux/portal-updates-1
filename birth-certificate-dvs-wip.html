@@ -62,10 +62,10 @@
                         margin-left: 2.5em;
                     }
 					.panel .form-sub-input{
-						display:none;
+						opacity:0.5;
 					}
 					.panel.active .form-sub-input{
-						display:block;
+						opacity:1;
 					}
                 </style>
                 This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
@@ -300,9 +300,7 @@
             <br />
             <br style="clear:both" />
 
-				<hr />
-            <br />
-
+				<br /><br />
             <a href="#" id="validate" class="au-btn au-btn--primary">Next</a>
 
             <br />
@@ -358,12 +356,18 @@
         });
 
 		
-		$('.panel input[type=radio]').bind("click", function() {
+		$('.panel input').bind("click", function() {
 			
 			var inputStateActive = "#input-"+state+" .panel.active";
+			
 			$(inputStateActive).attr("class","panel");
 			
 			$(this.parentNode.parentNode).addClass("active");
+			
+			var inputStateActiveRadio = "#input-"+state+" .panel.active input[type=radio]";
+			
+			$(inputStateActiveRadio).prop("checked","checked");
+
 			
 			
 		});
