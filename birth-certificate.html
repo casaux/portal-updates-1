@@ -1,374 +1,420 @@
 
+
+
 <!doctype html>
+
 <html>
+
 <head>
+
 <meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1">
 
 <title>myCASA</title>
 
-<link rel="stylesheet" href="../furnace.min.css">
-<link rel="stylesheet" href="../lead.css">
-<link rel="stylesheet" href="forms.css">
-<script type="text/javascript" src="../furnace.min.js"></script>
-<script src="../jquery.min.js"></script>
- <script src="../jquery.js"></script>
+
+
+	<link rel="stylesheet" href="furnace.min.css">
+
+	<link rel="stylesheet" href="lead.css">
+
+	<script type="text/javascript" src="furnace.min.js"></script>
+
+	
+
+	<script src="jquery.min.js"></script>
+
+
+
+   <script src="jquery.js"></script>
+
+
+
+	
+
+	
+
+	
+
 </head>
+
+
 
 <body class="live-demo au-body au-grid arn-application">
 
 
+
+	
+
 <main class="au-grid">
 
+	
+
+	
 
 	<div class="header">
+
 		<div class="container">
+
 			<div class="row">
+
 					<div class="logo au-body au-body--dark">
-						<a href="../index.html"><img src="../CASALOGO-white-i.svg" width="256"></a>
-					</div>
-					<div class="user">
-						<div class="au-body au-body--dark">
-						   <a class="au-btn au-btn--dark" href="../signed-out.html">Sign out</a></div>
+
+						<a href="index.html"><img src="CASALOGO-white-i.svg" width="256"></a>
+
 					</div>
 
+					<div class="user">
+
+						<div class="au-body au-body--dark">
+
+						   <a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a></div>
+
+					</div>
+
+			  
+
+			  
 
 			</div>
+
 		</div>
+
 	</div>	<div class="banner">
-	<div class=container>
+
+	<div class=container>	
+
 		<style>
+
 			.banner {padding-left: 25px;}
+
 			.banner {padding-top: 10px;}
+
 			.banner {padding-bottom: 10px;}
-			
-			.input-state{display:none;}
-			#validate{display:none;}
-			
-			.form-sub-input{margin-left:2.5em;}
+
+		
 
 		</style>
+
 		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
-	</div>
+
 	</div>
 
+	</div>
+
+			
+
+			
 
 	<div class="body">
+
 		<div class="container">
+
+			
 
 			<div class="col-xs-6">
 
+				
+
 			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+
 			  <ul class="au-link-list au-link-list--inline">
+
 				<li><a href="welcome.html">myCASA</a></li>
+
 				<li>ARN application</li>
+
 			  </ul>
-			</nav>
 
-			<header class="au-header padding-bottom-1x" role="banner">
-				<h1 class="au-header-heading">Australian Birth Certificate</h1>
+			</nav>	
+
+				
+
+			<header class="au-header" role="banner">
+
+				<h1 class="au-header-heading">Australian birth certificate details</h1>
+
 				<a class="au-direction-link au-direction-link--left" href="arn4.html">Back</a>
+
 				</header>
-				
-				
-				
-				<label for="given-name-input">Given names</label>
-				<input class="au-text-input au-text-input--block" name="given-name-input" id="given-name-input" type="text" value="">
-				<br>
-				
-				<label for="family-name-input">Family names</label>
-				<input class="au-text-input au-text-input--block" name="family-name-input" id="family-name-input" type="text" value="">
-				<br>
-				
-				
-				
-			
-				<div class="form-section date-entry">
-				<p class="label">Date of birth</p>
-					<div class="date date-day">
-						<label for="text-input-block1" class="form-text">Day</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
-					</div>
-					<div class="date date-month">
-						<label for="text-input-block2" class="form-text">Month</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="">
-						</div>
-					<div class="date date-year">
-						<label for="text-input-block3" class="form-text">Year</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
-						</div>
-				</div>
-				<div class="form-text">For example, 31 01 1980</div>
-				<br /><br />
 
+			
 
 				
+				<p class="au-callout" aria-label="Callout description1">
+					While most Australian birth certificates can be verified online, formats and required data for birth certificates varies greatly by date and state / territory. Guidance on finding and entering the correct data for birth certificates can be found on the <a href="https://www.usi.gov.au/about/forms-id/birth-certificate-australian" target="_blank">Unique Student Identifier website</a>.
 			
-				<label for="select-state">State or territory</label>
-					<select id="select-state" class="au-select au-select--block">
-					  <option value="0">Please select</option>
-					  <option value="ACT">Australian Capital Territory</option>
-					  <option value="NSW">New South Wales</option>
-					  <option value="NT">Northern Territory</option>
-						<option value="SA">South Australia</option>
-						<option value="TAS">Tasmania</option>
-						<option value="QLD" selected>Queensland</option>
-						<option value="WA">Western Australia</option>
-						<option value="VIC">Victoria</option>
-					</select>
-	
-			<br /><br /><br />
-				
-				
-			
-			<div id="input-QLD" class="input-state">
-				
-				<p class="au-callout">Queensland birth certificates from 1st January 1941 can be verified online. If you have an older document, please choose another type of identification.<br /><br />
-				You can verify your birth certificate with either the Date of Registration or Certificate Number below.
-				<br /><br />
-				Certificate numbers are printed at the bottom of birth certificates. If you're having problems finding the right number (which may happen for older certificates) you can also try entering the Date of Registration.
-				
+					
 				</p>
 				
+
+				
+				<br />
+			
+
+				
+
+				
+
+					<label for="text-input-block">Given names</label>
+
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="Bob">
+
+				
+
 				<br />
 
 				
-				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="r-qld-dvs" id="r-qld-certificate-number" value="certificate-number" checked>
-				  <span class="au-control-input__text"> Certificate Number</span>
-				</label>
-				
-				<div class="form-sub-input">
-					<div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. This number must be exactly 11 digits in length.
-					</div>
-					<input class="au-text-input au-text-input--block" name="registration-number-input" id="r-qld-certificate-number-input" type="text" value="">
-					<br>
-				
-				</div>
-				
-				
-				
-				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="r-qld-dvs" id="r-qld-registration-date" value="registration-date">
-				  <span class="au-control-input__text"> Date of Registration</span>
-				</label>
-				
-				<div class="form-sub-input">
-					
-					<div class="form-text">Please enter your Date of Registration below in numeric format; for example 31 01 1980 for 31 December 1980.
-					
-					
-					
-					<div class="form-section date-entry" style="margin-top:0.75em;padding-top:0;">
-					<div class="date date-day">
-						<label for="r-qld-registration-date-dd" class="form-text">Day</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="r-qld-registration-date-dd" type="text" value="">
-					</div>
-					<div class="date date-month">
-						<label for="r-qld-reg-date-mm" class="form-text">Month</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="r-qld-registration-date-mm" type="text" value="">
-						</div>
-					<div class="date date-year">
-						<label for="r-qld-reg-date-yyyy" class="form-text">Year</label>
-						<input class="au-text-input au-text-input--block" name="text-input-block" id="r-qld-registration-date-yyyy" type="text" value="">
-						</div>
-				</div>
-				</div>
-				</div>
+
+				<label for="text-input-block">Family name</label>
+
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="Furzer">
+
 				
 
-			</div>
+				<br />	
+
+				
+
+				<div class="date-entry">
+
+				
+
+
+				<p class="date-descriptor">Date of Birth</p>
+
+				
+
+				<div class="date date-day">
+
+					<label for="text-input-block1">Day</label>	
+
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
+
+				</div>	
+
+				<div class="date date-month">	
+
+					<label for="text-input-block2">Month</label>	
+
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="">
+
+					</div>
+
+				<div class="date date-year">
+
+					<label for="text-input-block3">Year</label>	
+
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
+
+								
+
+					</div>
+
+					<p class="date-guidance">For example, 31 01 1980</p>	
+
+				</div>
+
+<br />
+
+				
+
+			<label for="select1block">Registration state or territory</label>
+<select id="select1block" class="au-select au-select--block">
+  <option value="1">Please select</option>
+  <option value="2">Australian Capital Territory</option>
+  <option value="3">New South Wales</option>
+  <option value="4">Northern Territory</option>
+  <option value="5">Queensland</option>
+  <option value="6">South Australia</option>
+  <option value="7">Tasmania</option>
+  <option value="8">Victoria</option>
+<option value="8">Western Australia</option>
+</select>
+					
+<br /><br />
+					<label for="text-input-block">Registration number</label>
+
+
+
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+
+				<br />	
+
 				
 				
-<br />				
-<br style="clear:both" />
-				
-	<br />	<br />				
-				
-				<a href="#" id="validate" class="au-btn au-btn--primary">Next</a>
-				
-				<br /><br /><br />
-				Correct string for DVS:
-				<div id="output"></div>
+				<label for="text-input-block">Certificate number</label>
+
+
+
+				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
+
+				<br />	
 				
 				
+
+				<div class="date-entry">
+
 				
+
+	
+
+				<p class="form-descriptor">Registration date</p>
+
+					
+
+				<div class="date date-day">
+
+					<label for="text-input-block1">Day</label>	
+
+
+
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
+
+				</div>	
+
+				<div class="date date-month">	
+
+					<label for="text-input-block2">Month</label>	
+
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block2" type="text" value="">
+
+					</div>
+
+				<div class="date date-year">
+
+					<label for="text-input-block3">Year</label>	
+
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
+
+								
+
+					</div>
+
+					<p class="date-guidance">For example, 31 01 2020</p>	
+
+				</div>
+
+			
+
+				<br /><br />
+
 				
+
+								<p class="au-callout" aria-label="Callout description1">
+
+
+
+									<label class="au-control-input">
+
+  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+
+  <span class="au-control-input__text">
+
+I confirm that I am authorised to provide the personal details presented and I consent to my  information being checked with the document issuer or official record holder via third party systems for the purpose of confirming your identity
+
+									</span>
+
+</label>	
+
+</p>			
+
+
+
+				<br>
+
+			
+
+				<br><br>
+
+				
+
+				
+
+  			<a class="au-btn" href="citizenship-certificate.html">Next</a>
+
+					
+
 				<hr />
 
+
+
 <a href="saved.html" class="au-btn au-btn--secondary">
+
   Save and exit
+
 </a>&nbsp; to continue this application later
 
+				
 
+				</div>
+
+				
 
 			</form>
 
+				
 
+								
 
+				
 
+		
 
+			
+
+				
 
 			</div>
 
+			
 
+			
 
-		</div>
+			<!--
+
+			<div class="row">
+
+			  <div class="col-xs-4"><span>4</span></div>
+
+			  <div class="col-xs-4"><span>4</span></div>
+
+			  <div class="col-xs-4"><span>4</span></div>
+
+			</div>-->
+
+			
+
+		</div>	
+
 	</div>
+
+	
 
 <div class="footer">
+
 		<div class="footer-wrapper">
-			<iframe src="../footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+
+			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+
 		</div>
+
 	</div>
 
+	
+
+	
 
 </main>
 
-<script>
-
-	
-var state;
-state = $("#select-state option:selected").val();
-
-	
-	
-if(state != 0){
-	
-	
-	var showState = "#input-"+state;
-	$(showState).css("display","block");
-	$("#validate").css("display","inline");
-	
-}	
-	
-	
-	
-	
-	
-$('#select-state').bind("change",function(){
-
-	state = $("#select-state option:selected").val();
-		
-	
-	var showState = "#input-"+state;
-	$(showState).css("display","block");
-	$("#validate").css("display","inline");
-	
-});
-	
-	
-$('#validate').bind("click",function(){
-	
-		
-	var given_names=$("#given-name-input").val();
-	var family_name=$("#family-name-input").val();
-	var registration_number="";
-	var registration_date="";
-	var registration_year="";
-	var certificate_number="";
-
-	
-	var dob=$("#text-input-block1").val()+"/"+$("#text-input-block2").val()+"/"+$("#text-input-block3").val();
-	
-	var output="";
 	
 
 	
-	if(state=="QLD"){
-		
-		
-		if($("input:radio[name='r-qld-dvs']:checked").val()=="registration-date"){
-			
-			// registration date
-			
-			registration_date = $("#r-qld-registration-date-yyyy").val()+"-"+$("#r-qld-registration-date-mm").val()+"-"+$("#r-qld-registration-date-dd").val();
 
-			
-			} else {
-			
-				
-			// registration number
-			// QLD writes "registration number"	on certificates, but asks for CertificateNumber in DVS ¯\_(ツ)_/¯ 
+	
 
-			certificate_number = $("#r-qld-certificate-number-input").val();
-				
-		
-		}
-		
-		
-		/*
-		#r-qld-reg-date-dd
-		r-qld-reg-date-mm
-		r-qld-reg-date-yyyy
-		r-qld-registration-number-input
-		*/
-		
-		
-		
-		
-		
-		
-		
-		
-	} else if(state=="WA"){
 	
-	
-	
-	
-	
-	
-	
-	
-	var slash=DVS.indexOf("/");
-	
-	var district = DVS.substring(0,slash);
-	var number =  DVS.substring(slash+1,DVS.length);
-	number = number.substring(0,number.indexOf("/"));
-	
-	
-	// append to have extra 0 if needed
-	if(district.length==1){
-		
-		district="0"+district;
-	}
-	
-	if(number.length < 6){
-		
-		
-		var increaseBy = 5 - number.length;
-		
-		while(increaseBy--){
-			
-			number="0"+number;
-			
-		}
-		
-		
-	}
-	
-		
-		
-		
-		
-		
-		
-	}
-	
-		
-	
-		
-	output="GivenName|"+given_names+";FamilyName|"+family_name+";RegistrationNumber|"+registration_number+";RegistrationDate"+registration_date+"|;RegistrationState|"+state+";RegistrationYear|"+registration_year+";DatePrinted|;CertificateNumber|"+certificate_number+";DateOfBirth|"+dob;
-	$("#output").html(output);
-	
-	return false;
-	
-	
-	
-	
-});
-	
-</script>
 
 </body>
+
 </html>
+
