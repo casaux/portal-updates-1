@@ -89,18 +89,23 @@
                         <a class="au-direction-link au-direction-link--left" href="arn4.html">Back</a>
                     </header>
 
-                    <label for="given-name-input">Given names</label>
-                    <div class="form-text">Please enter all given names as written on your birth certificate, including any middle names</div>
-                    <input class="au-text-input au-text-input--block" name="given-name-input" id="given-name-input" type="text" value="">
-                    <br>
+                  
 
                     <label for="family-name-input">Family name</label>
+					<div class="form-text">Please your family name (surname) as written on your birth certificate</div>
+
                     <input class="au-text-input au-text-input--block" name="family-name-input" id="family-name-input" type="text" value="">
                     <br>
 
+					
+					  <label for="given-name-input">Given names</label>
+                    <div class="form-text">Please enter all given names as written on your birth certificate, including any middle names</div>
+                    <input class="au-text-input au-text-input--block" name="given-name-input" id="given-name-input" type="text" value="">
+                    <br>
+					
                     <div class="form-section date-entry">
                         <p class="label">Date of birth</p>
-                        <div class="form-text">For example, 31 01 1980</div>
+                        <div class="form-text">For example, 31 01 1990</div>
 
                         <div class="date date-day">
                             <label for="text-input-block1" class="form-text">Day</label>
@@ -159,7 +164,7 @@
 
                             <div class="form-sub-input">
 
-                                <div class="form-text">Please enter your Date of Registration below in numeric format; for example 14 02 1980.
+                                <div class="form-text">Please enter your Date of Registration below in numeric format; for example 14 02 1990. This can be found in the "Registrar" section of your birth certificate.
 
                                     <div class="form-section date-entry" style="margin-top:0.75em;padding-top:0;">
                                         <div class="date date-day">
@@ -189,7 +194,7 @@
                                 </label>
 
                                 <div class="form-sub-input">
-                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. If present, certificate numbers are printed at the very bottom of birth certificates under the seal.
+                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. If present, a Certificate Number will be printed at the very bottom of birth certificates under the seal. It is not the Registration Number at the top of your certificate.
 
                                     </div>
                                     <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-qld-certificate-number-input" type="text" value="">
@@ -201,6 +206,72 @@
                         </div>
                    
 
+                   <!-- TAS -->
+
+                    <div id="input-tas" class="input-state">
+
+                        <p class="au-callout">Tasmanian birth certificates from 1st January 1970 can be verified online. If you have an older document, please choose another type of identification.
+                            <br />
+                            <br /> You can verify your birth certificate with either the Date of Registration or Certificate Number below.
+                        </p>
+
+                        <br />
+
+                         <div class="panel active">
+                            <label class="au-control-input">
+                                <input class="au-control-input__input" type="radio" name="r-tas-dvs" id="r-tas-registration-date" value="registration-date" checked>
+                                <span class="au-control-input__text"> Date of Registration</span>
+                            </label>
+
+                            <div class="form-sub-input">
+
+                                <div class="form-text">Please enter your Date of Registration below in numeric format; for example 14 02 1990. This can be found in section 20 on your birth certificate.
+
+                                    <div class="form-section date-entry" style="margin-top:0.75em;padding-top:0;">
+                                        <div class="date date-day">
+                                            <label for="r-tas-registration-date-dd" class="form-text">Day</label>
+                                            <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="r-tas-registration-date-dd" type="text" value="">
+                                        </div>
+                                        <div class="date date-month">
+                                            <label for="r-tas-reg-date-mm" class="form-text">Month</label>
+                                            <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="r-tas-registration-date-mm" type="text" value="">
+                                        </div>
+                                        <div class="date date-year">
+                                            <label for="r-tas-reg-date-yyyy" class="form-text">Year</label>
+                                            <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="r-tas-registration-date-yyyy" type="text" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+							 </div>
+                            <br style="clear:both;" />
+                            <br style="clear:both;" />
+                            <br style="clear:both;" />
+
+                            <div class="panel">
+                                <label class="au-control-input">
+                                    <input class="au-control-input__input" type="radio" name="r-tas-dvs" id="r-tas-certificate-number" value="certificate-number">
+                                    <span class="au-control-input__text"> Certificate Number</span>
+                                </label>
+
+                                <div class="form-sub-input">
+                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. If present, a Certificate Number will be printed at the very bottom left of your birth certificate. It is not the Registration Number at the top of your certificate.
+
+                                    </div>
+                                    <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-tas-certificate-number-input" type="text" value="">
+                                    <br>
+
+                                </div>
+                            </div>
+
+                        </div>
+                   
+					
+					
+					
+					
+					
+					
                     <!--SA-->
 
                     <div id="input-sa" class="input-state">
@@ -239,7 +310,7 @@
                             </label>
 
                             <div class="form-sub-input">
-                                <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. Certificate numbers are printed at the bottom of birth certificates.
+                                <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. If present, a Certificate Number will be printed at the very bottom of your birth certificate under the seal.
 
                                 </div>
                                 <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-sa-certificate-number-input" type="text" value="">
@@ -271,7 +342,7 @@
 
                     <div class="form-sub-input">
                         <div class="form-text">
-                            Please enter your Registration Number exactly as it appears on your birth certificate. 
+                            Please enter your Registration Number exactly as it appears on your birth certificate. This number can be found in the "Registration" section of your birth certificate.
                         </div>
                         <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-act-registration-number-input" type="text" value="">
                         <br>
@@ -287,7 +358,7 @@
                     </label>
 
                     <div class="form-sub-input">
-                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. If present, certificate numbers are printed at the very bottom of birth certificates under the ACT seal.
+                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. If present, certificate numbers are printed at the very bottom of your birth certificate under the ACT seal.
 
                         </div>
                         <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-act-certificate-number-input" type="text" value="">
