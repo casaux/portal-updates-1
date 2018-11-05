@@ -368,6 +368,67 @@
                 </div>
 
             </div>
+					
+			
+			<!-- NSW -->
+					
+
+            <div id="input-nsw" class="input-state">
+
+                <p class="au-callout">NSW birth certificates from 1st January 1914 can be verified online. If you have an older document, please choose another type of identification.
+                    <br />
+                    <br /> You can verify your birth certificate with either the Registration Number or Certificate Number.
+                </p>
+
+                <br />
+
+                 <div class="panel active">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-nsw-dvs" id="r-nsw-registration-number" value="registration-number" checked>
+                        <span class="au-control-input__text"> Registration Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">
+                            Your Registration Number can be found in the top right of your birth certificate. <br /><br />This number also includes a year - you do not need to enter this. For example, if your certificate reads 123456/2000, you only need to enter 123456. 
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nsw-registration-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
+                <br style="clear:both;" />
+
+                <div class="panel">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-nsw-dvs" id="r-nsw-certificate-number" value="certificate-number">
+                        <span class="au-control-input__text"> Certificate Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. These are only printed on NSW birth certificates after 13th October 2014.
+
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nsw-certificate-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
+
+            </div>
+					
+					
+					
+					
+			<!-- end -->
+					
+					
+					
+					
+					
+					
+					
+					
  </div>
             <br />
             <br style="clear:both" />
@@ -479,6 +540,30 @@
                 }
 
             }
+			
+			 if (state == "nsw") {
+
+                if ($("input:radio[name='r-nsw-dvs']:checked").val() == "registration-number") {
+
+                    registration_number = $("#r-nsw-registration-number-input").val();
+					
+					var slash = registration_number.indexOf("/");
+					
+					if(slash>0){
+						var nsw_reg_number = registration_number.substring(0, slash);
+						registration_number = nsw_reg_number;
+					}
+					
+
+
+                } else {
+					
+                    certificate_number = $("#r-nsw-certificate-number-input").val();
+
+                }
+
+            }
+
 
             if (state == "sa") {
 
