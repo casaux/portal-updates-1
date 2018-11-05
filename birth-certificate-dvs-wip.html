@@ -135,7 +135,7 @@
                         <option value="nsw">New South Wales</option>
                         <option value="nt">Northern Territory</option>
                         <option value="sa" >South Australia</option>
-                        <option value="tas" selected>Tasmania</option>
+                        <option value="tas">Tasmania</option>
                         <option value="qld">Queensland</option>
                         <option value="wa">Western Australia</option>
                         <option value="vic">Victoria</option>
@@ -494,6 +494,36 @@
 
             }
 
+			
+			
+		 if (state == "tas") {
+
+			if ($("input:radio[name='r-tas-dvs']:checked").val() == "registration-date") {
+
+				// registration date
+
+				var monthValue = $("#r-tas-registration-date-mm").val();
+				var yearValue = $("#r-tas-registration-date-yyyy").val();
+				var dateValue = $("#r-tas-registration-date-dd").val();
+
+				//alert(dateValue);
+
+				//alert( moment([yearValue, monthValue - 1, dateValue, 00, 00, 00, 00]));
+
+				registration_date = $("#r-tas-registration-date-yyyy").val() + "-" + $("#r-tas-registration-date-mm").val() + "-" + $("#r-tas-registration-date-dd").val();
+
+			} else {
+
+				// registration number
+
+				certificate_number = $("#r-tas-certificate-number-input").val();
+
+			}
+		 }
+			
+			
+			
+			
             if (state == "qld") {
 
                 if ($("input:radio[name='r-qld-dvs']:checked").val() == "registration-date") {
