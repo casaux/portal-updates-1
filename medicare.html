@@ -34,6 +34,41 @@
 	$( document ).ready(function() {
 
 		
+		
+		$("#date-other").css("display","none");
+		$("#guidance-other").css("display","none");
+		
+		
+		$('input[type=radio]').change(function() {
+			
+			var colour=($("input[type=radio]:checked").val());
+			
+			if(colour=="green"){
+				
+				$("#date-other").css("display","none");
+				$("#guidance-green").css("display","block");
+				$("#guidance-other").css("display","none");
+				
+				
+				$("#medicare1").attr("src","medicare1.png");
+				$("#medicare2").attr("src","medicare2.png");
+				
+			} else {
+				
+				$("#date-other").css("display","block");
+				$("#guidance-other").css("display","block");
+				$("#guidance-green").css("display","none");
+				
+				
+				$("#medicare1").attr("src","medicare1-"+colour+".png");
+				$("#medicare2").attr("src","medicare2-"+colour+".png");
+				
+			}
+			
+		});
+
+		
+		
 		var nameOtherInputHeight = $("#name-other-input").height();
 		$("#name-other-input").css("height",0);
 		$("#name-other-input").css("overflow","hidden");
@@ -170,21 +205,21 @@
 				<span class="form-descriptor">Select card type / colour</span><br /><br />
 
 				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex" checked>
+				  <input class="au-control-input__input" type="radio" name="radio-ex" checked value="green">
 				  <strong class="au-control-input__text">Green card</strong>
 					<span class="au-control-input__text">Australian Citizen and permanent resident</span>
 				</label>
 				<br><br>
 
 				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex">
+				  <input class="au-control-input__input" type="radio" name="radio-ex" value="yellow">
 					<strong class="au-control-input__text">Yellow card</strong>
 					<span class="au-control-input__text">Reciprocal Health care agreement card</span>
 				</label>
 				<br><br>
 
 				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex">
+				  <input class="au-control-input__input" type="radio" name="radio-ex" value="blue">
 					<strong class="au-control-input__text">Blue card</strong>
 					<span class="au-control-input__text">Interim card</span>
 				</label>
@@ -206,7 +241,7 @@
 				<div class="indent">
 				<span class="date-guidance">IRN example below </span>
 				<div class="help-img" id="popover-content-irn">
-					<img src="medicare1.png" alt="The Individual reference number is located next to your name on the left">
+					<img src="medicare1.png" alt="The Individual reference number is located next to your name on the left" id="medicare1">
 				</div>
 				<br>
 					</div>
@@ -232,7 +267,7 @@
 					<div class="indent">
 				<span class="date-guidance">Name on more than one line example below</span>
 				<div class="help-img" id="popover-content-name">
-					<img src="medicare2.png" alt="Long names are shown on many lines">
+					<img src="medicare2.png" alt="Long names are shown on many lines" id="medicare2">
 				</div>
 				<br>
 					</div>
@@ -240,16 +275,24 @@
 				<p class="date-descriptor">Card Expiry Date</p>
 
 				<div class="date date-day">
+					<label for="text-input-block1">Date</label>
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
+				</div>
+					
+					
+				<div class="date date-day" id="date-other">
 					<label for="text-input-block1">Month</label>
 					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block1" type="text" value="">
 				</div>
 				<div class="date date-year">
 					<label for="text-input-block3">Year</label>
-					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="">
+					<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block3" type="text" value="" style="width:80%;">
 				</div>
 					<br style="clear:both;"/>
-				<span class="date-guidance">For example, 01 2020</span>
-
+					
+				<span class="date-guidance" id="guidance-green">For example, 08 2028</span>
+				<span class="date-guidance" id="guidance-other">For example, 31 01 2028</span>
+					
 				</div>
 				<br>
 
