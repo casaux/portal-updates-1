@@ -67,6 +67,12 @@
 					.panel.active .form-sub-input{
 						opacity:1;
 					}
+					
+					.date-limit{
+						display:none;
+					}
+					
+					
                 </style>
                 This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
             </div>
@@ -292,7 +298,7 @@
 
                             <div class="form-sub-input">
                                 <div class="form-text">
-                                    Please enter your Registration Number exactly as it appears on your birth certificate. This number can be different lengths but should appear near the Registrar's Signature.
+                                    Please enter your Registration Number exactly as it appears on your birth certificate. The Registration Number usually appear near the Registrar's Signature.
 
                                 </div>
                                 <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-sa-registration-number-input" type="text" value="">
@@ -374,13 +380,13 @@
 					
 
             <div id="input-nsw" class="input-state">
-
-                <p class="au-callout">NSW birth certificates from 1st January 1914 can be verified online. If you have an older document, please choose another type of identification.
-                    <br />
-                    <br /> You can verify your birth certificate with either the Registration Number or Certificate Number.
+				
+                <p class="au-callout date-limit">Sorry, only NSW birth certificates from 1st January 1914 can be verified online. <a href="arn4.html">Please choose another type of identification</a>.
+                   
                 </p>
 
                 <br />
+				<div class="date-input">
 
                  <div class="panel active">
                     <label class="au-control-input">
@@ -400,7 +406,7 @@
                 </div>
                 <br style="clear:both;" />
 
-                <div class="panel">
+                <div class="panel certificate-number">
                     <label class="au-control-input">
                         <input class="au-control-input__input" type="radio" name="r-nsw-dvs" id="r-nsw-certificate-number" value="certificate-number">
                         <span class="au-control-input__text"> Certificate Number</span>
@@ -416,8 +422,8 @@
                     </div>
                 </div>
 
-            </div>
-					
+            	</div>
+			</div>		
 					
 					
 					
@@ -467,6 +473,34 @@
 
     <script>
         var state;
+		var dob;
+		var dobObject;
+		
+		function getDOB(){
+			
+			if($("#text-input-block1").val().length==1){
+				$("#text-input-block2").val("0"+DD);
+				DD=$("#text-input-block2").val();
+			}
+			
+			if($("#text-input-block1").val().length==1){
+				$("#text-input-block1").val("0"+MM);
+				MM=$("#text-input-block1").val();
+			}
+			
+			
+			
+			var DD = 	$("#text-input-block1").val();
+			var MM = 	$("#text-input-block2").val();
+			var YYYY = 	$("#text-input-block3").val();
+			
+			dob = DD+"/"+MM+"/"+YYYY;
+									
+			dobObject = new Date(YYYY+"-"+MM+"-"+DD);
+			
+			
+		}
+
         state = $("#select-state option:selected").val();
 
         if (state != 0) {
@@ -482,10 +516,48 @@
 
             state = $("#select-state option:selected").val();
             $(".input-state").css("display", "none");
+			$("#input-nsw .certificate-number").css("display","block");
 
             var showState = "#input-" + state;
             $(showState).css("display", "block");
             $("#validate").css("display", "inline");
+			
+			getDOB();
+			
+			if(state=="nsw"){
+				
+				$("#input-nsw .date-limit").css("display","none");
+				$("#input-nsw .date-input").css("display","block");
+				
+				var nswLimitDate = new Date("1914-01-01");
+				
+				if(dobObject < nswLimitDate){
+										
+					$("#input-nsw .date-limit").css("display","block");
+					$("#input-nsw .date-input").css("display","none");
+					
+				}
+				
+				
+				var nswCertificateDate = new Date("2014-10-13");
+				
+				
+				if(dobObject < nswCertificateDate){
+						
+					$("#input-nsw .certificate-number").css("display","none");
+					
+				}
+				
+				
+				
+				
+				
+			}
+			
+			
+			
+			
+			
 
         });
 
@@ -523,7 +595,6 @@
             var registration_year = "";
             var certificate_number = "";
 
-            var dob = $("#text-input-block1").val() + "/" + $("#text-input-block2").val() + "/" + $("#text-input-block3").val();
 
             var output = "";
 
