@@ -396,8 +396,9 @@
 
                     <div class="form-sub-input">
                         <div class="form-text">
-                            Your Registration Number will usually be located in the top right of your birth certificate. <br /><br />This number may include a year - you do not need to enter this. For example, if your Registration Number reads 123456/2000, you only need to enter 123456. <br /><br />
-							Your Registration Number may also appear as 'Number' under 'Particulars of registration' on some birth certificates.
+                            <p>Depending on your birth certificate, your Registration Number may appear in different places. It may also be labelled as simply 'number' or 'No. in Register'.</p>
+							
+							<p>This number may include a year - you do not need to enter this. For example, if your Registration Number reads 123456/2000 or 2000/123456, you only need to enter 123456.</p>
                         </div>
                         <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nsw-registration-number-input" type="text" value="">
                         <br>
@@ -413,7 +414,7 @@
                     </label>
 
                     <div class="form-sub-input">
-                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. These are only printed on NSW birth certificates after 13th October 2014.
+                        <div class="form-text">Please enter your Certificate Number exactly as it appears on your birth certificate. These are only printed on NSW birth certificates after 13th October 2014 and should be located at the back page of your birth certificate.
 
                         </div>
                         <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nsw-certificate-number-input" type="text" value="">
@@ -621,7 +622,12 @@
 					
 					var slash = registration_number.indexOf("/");
 					
-					if(slash>0){
+					if(slash<5){
+					// format is: YYYY/NNNNN
+						var nsw_reg_number = registration_number.substring(slash+1, registration_number.length);
+						registration_number = nsw_reg_number;
+					} else {
+					// format is: NNNNN/YYYY
 						var nsw_reg_number = registration_number.substring(0, slash);
 						registration_number = nsw_reg_number;
 					}
