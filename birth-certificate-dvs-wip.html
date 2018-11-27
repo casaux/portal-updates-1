@@ -433,6 +433,95 @@
 					
 					
 					
+	<!-- WA -->
+					
+
+            <div id="input-wa" class="input-state">
+				
+                <p class="au-callout date-limit">Sorry, only Western Australian birth certificates from 1st January 1914 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
+					
+                   
+                </p>
+
+                <br />
+				<div class="date-input">
+
+                 <div class="panel active">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-wa-dvs" id="r-wa-registration-number" value="registration-number" checked>
+                        <span class="au-control-input__text"> Registration Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">
+                            <p>Your Registration Number should appear at the top of your birth certificate. Please enter it exactly as it appears on your certificate, including any slashes or letters.</p>
+							
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-wa-registration-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
+                <br style="clear:both;" />
+
+               
+
+            	</div>
+			</div>						
+					
+			<!-- VIC -->
+					
+
+            <div id="input-vic" class="input-state">
+				
+                <p class="au-callout date-limit">Sorry, only Victorian birth certificates from 1st January 1914 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
+					
+                   
+                </p>
+
+                <br />
+				<div class="date-input">
+
+                 <div class="panel active">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-vic-dvs" id="r-vic-registration-number" value="registration-number" checked>
+                        <span class="au-control-input__text"> Registration Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">
+                            <p>Your Registration Number should appear at the top of your birth certificate. Please enter it exactly as it appears on your certificate, including any slashes.</p>
+							
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-vic-registration-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
+                <br style="clear:both;" />
+
+               
+
+            	</div>
+			</div>						
+					
+					
+					
+					
+					
+					
+			<!-- end -->					
+					
+					
+					
 			<!-- end -->
 					
 					
@@ -604,6 +693,9 @@
 
             var output = "";
 
+			
+			// ACT
+			
             if (state == "act") {
                 // hey I'm a territory!
 
@@ -618,6 +710,8 @@
                 }
 
             }
+			
+			// NEW SOUTH WALES
 			
 			 if (state == "nsw") {
 
@@ -647,6 +741,7 @@
 
             }
 
+			// SOUTH AUSTRALIA
 
             if (state == "sa") {
 
@@ -662,6 +757,8 @@
 
             }
 
+		
+		// TASMANIA
 			
 			
 		 if (state == "tas") {
@@ -690,7 +787,7 @@
 		 }
 			
 			
-			
+			// QUEENSLAND
 			
             if (state == "qld") {
 
@@ -724,33 +821,66 @@
                 r-qld-registration-number-input
                 */
 
-            } else if (state == "WA") {
+				
+			// WESTERN AUSTRALIA
+				
+            } else if (state == "wa") {
 
-                var slash = DVS.indexOf("/");
+				
+				registration_number = $("#r-wa-registration-number-input").val();
+				var slashLength = 0;
+				slashLength = (registration_number.match(/\//ig).length);
+								
+				if(slashLength < 2){
+					
+					registration_number = registration_number.substr(0,7);
+					
+					
+				} else if(slashLength => 2) {
+					
+						var slash = registration_number.indexOf("/");
+						var district = registration_number.substring(0, slash);
+						var number = registration_number.substring(slash + 1, registration_number.length);
+						number = number.substring(0, number.indexOf("/"));
 
-                var district = DVS.substring(0, slash);
-                var number = DVS.substring(slash + 1, DVS.length);
-                number = number.substring(0, number.indexOf("/"));
+						// append to have extra 0 if needed
+						if (district.length == 1) {
 
-                // append to have extra 0 if needed
-                if (district.length == 1) {
+							district = "0" + district;
+						}
 
-                    district = "0" + district;
-                }
+						if (number.length < 6) {
 
-                if (number.length < 6) {
+							var increaseBy = 5 - number.length;
 
-                    var increaseBy = 5 - number.length;
+							while (increaseBy--) {
 
-                    while (increaseBy--) {
+								number = "0" + number;
 
-                        number = "0" + number;
+							}
 
-                    }
+						}
+					
+					registration_number = district+""+number;
+										
+					
+				}
+				
+				
+				
+           // VICTORIA
+				
+            } else if (state == "vic") {
 
-                }
-
-            }
+				
+				registration_number = $("#r-vic-registration-number-input").val();
+				var slash = registration_number.indexOf("/");
+				
+				registration_number = registration_number.substr(0,slash);
+				registration_year = $("#text-input-block3").val();
+				
+				
+			}
 
             output = "GivenName|" + given_names + ";FamilyName|" + family_name + ";RegistrationNumber|" + registration_number + ";RegistrationDate|" + registration_date + ";RegistrationState|" + state.toUpperCase() + ";RegistrationYear|" + registration_year + ";DatePrinted|;CertificateNumber|" + certificate_number + ";DateOfBirth|" + dob;
             $("#output").html(output);
