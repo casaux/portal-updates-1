@@ -829,7 +829,10 @@
 				
 				registration_number = $("#r-wa-registration-number-input").val();
 				var slashLength = 0;
-				slashLength = (registration_number.match(/\//ig).length);
+				if(registration_number.match(/\//ig)){
+					slashLength = registration_number.match(/\//ig).length;
+				}
+				
 								
 				if(slashLength < 2){
 					
@@ -881,6 +884,9 @@
 				
 				
 			}
+			
+			
+			getDOB();
 
             output = "GivenName|" + given_names + ";FamilyName|" + family_name + ";RegistrationNumber|" + registration_number + ";RegistrationDate|" + registration_date + ";RegistrationState|" + state.toUpperCase() + ";RegistrationYear|" + registration_year + ";DatePrinted|;CertificateNumber|" + certificate_number + ";DateOfBirth|" + dob;
             $("#output").html(output);
