@@ -1106,7 +1106,10 @@
 				registration_number = $("#r-vic-registration-number-input").val();
 				var slash = registration_number.indexOf("/");
 				
-				registration_number = registration_number.substr(0,slash);
+				if(slash > 0){
+				 	registration_number = registration_number.substr(0,slash);
+				}
+				
 				registration_year = $("#text-input-block3").val();
 				
 				
