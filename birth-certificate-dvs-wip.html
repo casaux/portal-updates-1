@@ -155,12 +155,14 @@
 
                     <div id="input-qld" class="input-state">
 
-                        <p class="au-callout">Queensland birth certificates from 1st January 1941 can be verified online. If you have an older document, please choose another type of identification.
-                            <br />
-                            <br /> You can verify your birth certificate with either the Date of Registration or Certificate Number below.
-                        </p>
+                         <p class="au-callout date-limit">Sorry, only Queensland birth certificates from 1st January 1941 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
 
-                        <br />
+                <br />
+
 
                          <div class="panel active">
                             <label class="au-control-input">
@@ -216,12 +218,13 @@
 
                     <div id="input-tas" class="input-state">
 
-                        <p class="au-callout">Tasmanian birth certificates from 1st January 1970 can be verified online. If you have an older document, please choose another type of identification.
-                            <br />
-                            <br /> You can verify your birth certificate with either the Date of Registration or Certificate Number below.
-                        </p>
+                        <p class="au-callout date-limit">Sorry, only Tasmanian birth certificates from 1st January 1970 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
 
-                        <br />
+                <br />
 
                          <div class="panel active">
                             <label class="au-control-input">
@@ -254,7 +257,7 @@
                             <br style="clear:both;" />
                             <br style="clear:both;" />
 
-                            <div class="panel">
+                            <div class="panel certicate-number">
                                 <label class="au-control-input">
                                     <input class="au-control-input__input" type="radio" name="r-tas-dvs" id="r-tas-certificate-number" value="certificate-number">
                                     <span class="au-control-input__text"> Certificate Number</span>
@@ -282,14 +285,17 @@
 
                     <div id="input-sa" class="input-state">
 
-                        <p class="au-callout">South Australian birth certificates from 1st January 1944 can be verified online. If you have an older document, please choose another type of identification.
-                        </p>
+                        <p class="au-callout date-limit">Sorry, only South Australian birth certificates from 1st January 1944 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
+					
+                   
+                </p>
 
                         <br />
 						
-						<p><strong>Select either Registration Number or Certificate Number below</strong></p>
-						<br />
-
                         <div class="panel active">
                             <label class="au-control-input">
                                 <input class="au-control-input__input" type="radio" name="r-sa-dvs" id="r-sa-registration-number" value="registration-number" checked>
@@ -309,7 +315,7 @@
                         <br style="clear:both;" />
 						
 
-                        <div class="panel">
+                        <div class="panel certificate-number">
                             <label class="au-control-input">
                                 <input class="au-control-input__input" type="radio" name="r-sa-dvs" id="r-sa-certificate-number" value="certificate-number">
                                 <span class="au-control-input__text"> Certificate Number</span>
@@ -333,10 +339,11 @@
 
             <div id="input-act" class="input-state">
 
-                <p class="au-callout">ACT birth certificates from 1st January 1930 can be verified online. If you have an older document, please choose another type of identification.
-                    <br />
-                    <br /> You can verify your birth certificate with either the Registration Number or Certificate Number.
-                </p>
+                 <p class="au-callout date-limit">Sorry, only ACT birth certificates from 1st January 1930 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
 
                 <br />
 
@@ -357,7 +364,7 @@
                 </div>
                 <br style="clear:both;" />
 
-                <div class="panel">
+                <div class="panel  certificate-number">
                     <label class="au-control-input">
                         <input class="au-control-input__input" type="radio" name="r-act-dvs" id="r-act-certificate-number" value="certificate-number">
                         <span class="au-control-input__text"> Certificate Number</span>
@@ -374,6 +381,59 @@
                 </div>
 
             </div>
+					
+					
+		 <!--NT-->
+
+            <div id="input-nt" class="input-state">
+
+                 <p class="au-callout date-limit">Sorry, only Northern Territory birth certificates from 1st January 1870 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+					
+				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
+				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
+				<label for="myFile">Choose a file</label>
+					
+                   
+                </p>
+                <br />
+
+                 <div class="panel active">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-nt-dvs" id="r-nt-registration-number" value="registration-number" checked>
+                        <span class="au-control-input__text"> Registration Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">
+                            Please enter your Registration Number exntly as it appears on your birth certificate. This number can be found in the "Registration" section of your birth certificate.
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nt-registration-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
+                <br style="clear:both;" />
+
+                <div class="panel certificate-number">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-nt-dvs" id="r-nt-certificate-number" value="certificate-number">
+                        <span class="au-control-input__text"> Certificate Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">Please enter your Certificate Number exntly as it appears on your birth certificate. If present, certificate numbers are printed at the very bottom of your birth certificate under the nt seal.
+
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-nt-certificate-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
+
+            </div>
+					
+								
+					
 					
 			
 			<!-- NSW -->
@@ -433,7 +493,7 @@
 					
 					
 					
-	<!-- WA -->
+			<!-- WA -->
 					
 
             <div id="input-wa" class="input-state">
@@ -468,7 +528,21 @@
                 </div>
                 <br style="clear:both;" />
 
-               
+                <div class="panel certificate-number">
+                    <label class="au-control-input">
+                        <input class="au-control-input__input" type="radio" name="r-wa-dvs" id="r-wa-certificate-number" value="certificate-number">
+                        <span class="au-control-input__text"> Certificate Number</span>
+                    </label>
+
+                    <div class="form-sub-input">
+                        <div class="form-text">Please enter your Certificate Number exntly as it appears on your birth certificate. If present, certificate numbers are printed at the very bottom of your birth certificate under the nt seal.
+
+                        </div>
+                        <input class="au-text-input au-text-input--block" name="registration-number-input" id="r-wa-certificate-number-input" type="text" value="">
+                        <br>
+
+                    </div>
+                </div>
 
             	</div>
 			</div>						
@@ -478,7 +552,7 @@
 
             <div id="input-vic" class="input-state">
 				
-                <p class="au-callout date-limit">Sorry, only Victorian birth certificates from 1st January 1914 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
+                <p class="au-callout date-limit">Sorry, only Victorian birth certificates from 1st January 1929 can be verified online. <a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
 					
 				Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
 				<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
@@ -627,31 +701,166 @@
 				var nswLimitDate = new Date("1914-01-01");
 				
 				if(dobObject < nswLimitDate){
-										
 					$("#input-nsw .date-limit").css("display","block");
 					$("#input-nsw .date-input").css("display","none");
-					
 				}
 				
 				
 				var nswCertificateDate = new Date("2014-10-13");
 				
-				
 				if(dobObject < nswCertificateDate){
-						
 					$("#input-nsw .certificate-number").css("display","none");
-					
 				}
-				
-				
-				
-				
 				
 			}
 			
+			if(state=="act"){
+				
+				$("#input-act .date-limit").css("display","none");
+				$("#input-act .date-input").css("display","block");
+				
+				var actLimitDate = new Date("1930-01-01");
+				
+				if(dobObject < actLimitDate){
+					$("#input-act .date-limit").css("display","block");
+					$("#input-act .date-input").css("display","none");
+				}
+				
+				
+				var actCertificateDate = new Date("2002-05-01");
+				
+				if(dobObject < actCertificateDate){
+					$("#input-act .certificate-number").css("display","none");
+				}
+				
+			}
 			
+			if(state=="nt"){
+				
+				$("#input-nt .date-limit").css("display","none");
+				$("#input-nt .date-input").css("display","block");
+				
+				var ntLimitDate = new Date("1870-01-01");
+				
+				if(dobObject < ntLimitDate){
+					$("#input-nt .date-limit").css("display","block");
+					$("#input-nt .date-input").css("display","none");
+				}
+				
+				
+				var ntCertificateDate = new Date("1999-07-12");
+				
+				if(dobObject < ntCertificateDate){
+					$("#input-nt .certificate-number").css("display","none");
+				}
+				
+			}		
 			
+			if(state=="sa"){
+				
+				$("#input-sa .date-limit").css("display","none");
+				$("#input-sa .date-input").css("display","block");
+				
+				var saLimitDate = new Date("1944-01-01");
+				
+				if(dobObject < saLimitDate){
+					$("#input-sa .date-limit").css("display","block");
+					$("#input-sa .date-input").css("display","none");
+				}
+				
+				
+				var saCertificateDate = new Date("1999-11-01");
+				
+				if(dobObject < saCertificateDate){
+					$("#input-sa .certificate-number").css("display","none");
+				}
+				
+			}	
+
+			if(state=="wa"){
+				
+				$("#input-wa .date-limit").css("display","none");
+				$("#input-wa .date-input").css("display","block");
+				
+				var waLimitDate = new Date("1841-01-01");
+				
+				if(dobObject < waLimitDate){
+					$("#input-wa .date-limit").css("display","block");
+					$("#input-wa .date-input").css("display","none");
+				}
+				
+				
+				var waCertificateDate = new Date("2017-29-03");
+				
+				if(dobObject < waCertificateDate){
+					$("#input-wa .certificate-number").css("display","none");
+				}
+				
+			}	
+	
+
+			if(state=="vic"){
+				
+				$("#input-vic .date-limit").css("display","none");
+				$("#input-vic .date-input").css("display","block");
+				
+				var vicLimitDate = new Date("1841-01-01");
+				
+				if(dobObject < vicLimitDate){
+					$("#input-vic .date-limit").css("display","block");
+					$("#input-vic .date-input").css("display","none");
+				}
+				
+				
+				var waCertificateDate = new Date("2017-29-03");
+				
+				if(dobObject < vicCertificateDate){
+					$("#input-vic .certificate-number").css("display","none");
+				}
+				
+			}				
 			
+			if(state=="tas"){
+				
+				$("#input-tas .date-limit").css("display","none");
+				$("#input-tas .date-input").css("display","block");
+				
+				var tasLimitDate = new Date("1970-01-01");
+				
+				if(dobObject < tasLimitDate){
+					$("#input-tas .date-limit").css("display","block");
+					$("#input-tas .date-input").css("display","none");
+				}
+				
+				
+				var tasCertificateDate = new Date("2016-09-01");
+				
+				if(dobObject < tasCertificateDate){
+					$("#input-tas .certificate-number").css("display","none");
+				}
+				
+			}
+			
+			if(state=="qld"){
+				
+				$("#input-qld .date-limit").css("display","none");
+				$("#input-qld .date-input").css("display","block");
+				
+				var qldLimitDate = new Date("1941-01-01");
+				
+				if(dobObject < tasLimitDate){
+					$("#input-qld .date-limit").css("display","block");
+					$("#input-qld .date-input").css("display","none");
+				}
+				
+				
+				var qldCertificateDate = new Date("2016-09-01");
+				
+				if(dobObject < qldCertificateDate){
+					$("#input-qld .certificate-number").css("display","none");
+				}
+				
+			}
 			
 
         });
@@ -706,6 +915,24 @@
                 } else {
 					
                     certificate_number = $("#r-act-certificate-number-input").val();
+
+                }
+
+            }
+			
+			
+			// ACT
+			
+            if (state == "nt") {
+                // hey I'm a territory too!
+
+                if ($("input:radio[name='r-nt-dvs']:checked").val() == "registration-number") {
+
+                    registration_number = $("#r-nt-registration-number-input").val();
+
+                } else {
+					
+                    certificate_number = $("#r-nt-certificate-number-input").val();
 
                 }
 
