@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1">
+      <title>myCASA</title>
+      <link rel="stylesheet" href="furnace.min.css">
+      <link rel="stylesheet" href="lead.css">
+      <link rel="stylesheet" href="forms.css">
+      <script type="text/javascript" src="furnace.min.js"></script>
+      <script src="jquery.min.js"></script>
+      <script src="jquery.js"></script>
+      <script src="moment.js"></script>
+   </head>
+   <body class="live-demo au-body au-grid arn-application">
+      <main class="au-grid">
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="logo au-body au-body--dark">
+                     <a href="../index.html"><img src="CASALOGO-white-i.svg" width="256"></a>
+                  </div>
+                  <div class="user">
+                     <div class="au-body au-body--dark">
+                        <a class="au-btn au-btn--dark" href="../signed-out.html">Sign out</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="banner">
+            <div class=container>
+               <style>
+                  .banner {
+                  padding-left: 25px;
+                  }
+                  .banner {
+                  padding-top: 10px;
+                  }
+                  .banner {
+                  padding-bottom: 10px;
+                  }
+                 
+         
+                  .form-sub-input {
+                  margin-left: 2.5em;
+                  }
+                  .panel .form-sub-input{
+                  opacity:0.5;
+                  }
+                  .panel.active .form-sub-input{
+                  opacity:1;
+                  }
+				   
+                  .date-limit{
+                  display:none;
+                  }
+                  .panel .au-control-input__input{
+                  display:block;
+                  height:0;
+                  width:0;
+                  }
+               </style>
+               This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+            </div>
+         </div>
+         <div class="body">
+            <div class="container">
+               <div class="col-xs-6">
+                  <nav class="au-breadcrumbs" aria-label="breadcrumb">
+                     <ul class="au-link-list au-link-list--inline">
+                        <li><a href="welcome.html">myCASA</a></li>
+                        <li>ARN application</li>
+                     </ul>
+                  </nav>
+                  <header class="au-header padding-bottom-1x" role="banner">
+                     <h1 class="au-header-heading">Australian Citizenship Certificate</h1>
+                     <a class="au-direction-link au-direction-link--left" href="arn4.html">Back</a>
+                  </header>
+                  <label for="family-name-input">Family name</label>
+                  <div class="form-text">Please enter your family name (surname) as written on your citizenship certificate</div>
+                  <input class="au-text-input au-text-input--block" name="family-name-input" id="family-name-input" type="text" value="">
+                  <br>
+                  <label for="given-name-input">Given names</label>
+                  <div class="form-text">Please enter all given names as written on your citizenship certificate, including any middle names</div>
+                  <input class="au-text-input au-text-input--block" name="given-name-input" id="given-name-input" type="text" value="">
+                  <br>
+                  <div class="form-section date-entry">
+                     <p class="label">Date of birth</p>
+                     <div class="form-text">For example, 31 01 1990</div>
+                     <div class="date date-day">
+                        <label for="text-input-block1" class="form-text">Day</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="text-input-block1" type="text" value="">
+                     </div>
+                     <div class="date date-month">
+                        <label for="text-input-block2" class="form-text">Month</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="text-input-block2" type="text" value="">
+                     </div>
+                     <div class="date date-year">
+                        <label for="text-input-block3" class="form-text">Year</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="text-input-block3" type="text" value="">
+                     </div>
+                     <br style="clear:both;" />
+                  </div>
+                  <br />
+				   <br style="clear:both;" /> &nbsp;
+				   
+				   <div class="form-section date-entry">
+                     <p class="label">Date of citizenship acquisition</p>
+                     <div class="form-text">For example, 30 06 2010</div>
+                     <div class="date date-day">
+                        <label for="acq-input-block1" class="form-text">Day</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="DD" id="acq-input-block1" type="text" value="">
+                     </div>
+                     <div class="date date-month">
+                        <label for="acq-input-block2" class="form-text">Month</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="MM" id="acq-input-block2" type="text" value="">
+                     </div>
+                     <div class="date date-year">
+                        <label for="acq-input-block3" class="form-text">Year</label>
+                        <input class="au-text-input au-text-input--block" name="text-input-block" placeholder="YYYY" id="acq-input-block3" type="text" value="">
+                     </div>
+                     <br style="clear:both;" />
+                  </div>
+				   
+				   
+				   <br />
+                  <br />
+                  <br style="clear:both;" /> &nbsp;
+                  <br />
+                  <br />
+                
+				   
+						<div id="input-cc" class="input-state">
+
+							<label for="r-cc-stock-number-input">Registration number
+								 
+								<div class="form-text">
+							Please enter your X number exactly as it appears on your birth certificate, including slashes
+							</div>
+							
+							 <input class="au-text-input au-text-input--block" name="stock-number-input" id="r-cc-stock-number-input" type="text" value="">
+								
+								<br />
+								<div class="form-text">
+								Depending on your birth certificate type, your X number may appear in different places. 
+								 </div>
+								 
+								 <ul class="form-text">
+									<li>...</li>
+									<li>...</li>
+								 </ul>
+								 
+								
+								
+								 
+							</label>
+
+						</div>	
+		
+                 
+               <br />
+               <br style="clear:both" />
+               <br /><br />
+				 
+				    <a href="#" id="validate" class="au-btn au-btn--primary">Next</a>
+				 
+              
+               <br />
+               <br />
+               <br /> Correct string for DVS:
+               <br />
+               <textarea id="output" style="width:400px;height:100px;font-family:monospace;"></textarea>
+               <hr />
+               <a href="saved.html" class="au-btn au-btn--secondary">
+               Save and exit
+               </a>&nbsp; to continue this application later
+               </form>
+            </div>
+         </div>
+         </div>
+         <div class="footer">
+            <div class="footer-wrapper">
+               <iframe src="../footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+            </div>
+         </div>
+      </main>
+      <script>
+		  
+		  
+		    $('#validate').bind("click", function() {
+         
+             var given_names = $("#given-name-input").val();
+             var family_name = $("#family-name-input").val();
+             var dob = "";
+             var acq_date = "";
+             var stock_number = "";
+         
+             var output = "";
+		  
+		    function getDOB(){
+         
+				 if($("#text-input-block1").val().length==1){
+				 $("#text-input-block1").val("0"+$("#text-input-block1").val());
+				 }
+
+				 if($("#text-input-block2").val().length==1){
+				 $("#text-input-block2").val("0"+$("#text-input-block2").val());
+				 }
+
+				 var DD = 	$("#text-input-block1").val();
+				 var MM = 	$("#text-input-block2").val();
+				 var YYYY = 	$("#text-input-block3").val();
+
+				 dob = DD+"/"+MM+"/"+YYYY;
+
+			}
+				
+			function getAcqDate(){
+         
+				 if($("#acq-input-block1").val().length==1){
+					$("#acq-input-block1").val("0"+$("#acq-input-block1").val());
+				 }
+         
+				 if($("#acq-input-block2").val().length==1){
+				 $("#acq-input-block2").val("0"+$("#acq-input-block2").val());
+				 }
+
+				 var DD = 	$("#acq-input-block1").val();
+				 var MM = 	$("#acq-input-block2").val();
+				 var YYYY = 	$("#acq-input-block3").val();
+				 acq_date = DD+"/"+MM+"/"+YYYY;
+
+			}
+				
+				
+			getDOB();
+			getAcqDate();
+				
+				
+			stock_number = $("#r-cc-stock-number-input").val();
+	
+         
+             output = "GivenName|" + given_names + ";FamilyName|" + family_name + 
+			";StockNumber|" + stock_number +
+			";DateOfBirth|" + dob +
+			";AcquisitionDate|" + acq_date;
+				
+             $("#output").html(output);
+         
+             return false;
+				
+			});
+  
+      </script>
+   </body>
+</html>

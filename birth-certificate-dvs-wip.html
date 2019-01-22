@@ -466,15 +466,12 @@
          function getDOB(){
          
          if($("#text-input-block1").val().length==1){
-         $("#text-input-block2").val("0"+DD);
-         DD=$("#text-input-block2").val();
+         $("#text-input-block1").val("0"+$("#text-input-block1").val());
          }
          
-         if($("#text-input-block1").val().length==1){
-         $("#text-input-block1").val("0"+MM);
-         MM=$("#text-input-block1").val();
+         if($("#text-input-block2").val().length==1){
+         $("#text-input-block2").val("0"+$("#text-input-block2").val());
          }
-         
          
          
          var DD = 	$("#text-input-block1").val();
