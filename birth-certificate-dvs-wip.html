@@ -135,7 +135,7 @@
 								   		</span>
 									   <span id="act-date-limit">
 										   
-										    Australian Capital Territory birth certificates before 1 January 1930 .
+										    Australian Capital Territory birth certificates before 1 January 1930.
 								   
 								   
 								   		</span>
@@ -587,150 +587,107 @@
 		var beforeDateLimit=false;
 			 
          if(state=="nsw"){
-         
-         $("#input-nsw .date-limit").css("display","none");
-         $("#input-nsw .date-input").css("display","block");
-         
-         var nswLimitDate = new Date("1914-01-01");	 
-			 
-			 
-         if(dobObject < nswLimitDate){
-         $("#nsw-date-limit").css("display","inline");
-         }
-         
-         
-         var nswCertificateDate = new Date("2014-10-13");
-         
-         if(dobObject < nswCertificateDate){
-         $("#input-nsw .certificate-number").css("display","none");
-         }
+   
+         	var nswLimitDate = new Date("1914-01-01");	 
+			 if(dobObject < nswLimitDate){
+				 $("#nsw-date-limit").css("display","inline");
+				 $("#input-nsw").css("display","none");
+				 beforeDateLimit=true;
+
+			 } else {
+				  $("#input-nsw").css("display","block");
+			 }
+
          
          }
          
          if(state=="act"){
+     
+        	 var actLimitDate = new Date("1930-01-01");
          
-         $("#input-act .date-limit").css("display","none");
-         $("#input-act .date-input").css("display","block");
-         
-         var actLimitDate = new Date("1930-01-01");
-         
-         if(dobObject < actLimitDate){
-         $("#input-act .date-limit").css("display","block");
-         $("#input-act .date-input").css("display","none");
-         }
-         
-         
-         var actCertificateDate = new Date("2002-05-01");
-         
-         if(dobObject < actCertificateDate){
-         $("#input-act .certificate-number").css("display","none");
-         }
+			if(dobObject < actLimitDate){
+				 $("#act-date-limit").css("display","inline");
+				 $("#input-act").css("display","none");
+				beforeDateLimit=true;
+
+			 } else {
+				  $("#input-act").css("display","block");
+			 }
+
          
          }
          
          if(state=="nt"){
+        
+        	 var ntLimitDate = new Date("1870-01-01");
          
-         $("#input-nt .date-limit").css("display","none");
-         $("#input-nt .date-input").css("display","block");
-         
-         var ntLimitDate = new Date("1870-01-01");
-         
-         if(dobObject < ntLimitDate){
-         $("#input-nt .date-limit").css("display","block");
-         $("#input-nt .date-input").css("display","none");
-         }
-         
-         
-         var ntCertificateDate = new Date("1999-07-12");
-         
-         if(dobObject < ntCertificateDate){
-         $("#input-nt .certificate-number").css("display","none");
-         }
+			if(dobObject < ntLimitDate){
+					 $("#nt-date-limit").css("display","inline");
+					 $("#input-nt").css("display","none");
+					 beforeDateLimit=true;
+				 } else {
+					  $("#input-nt").css("display","block");
+				 }
+
          
          }		
          
          if(state=="sa"){
          
-         $("#input-sa .date-limit").css("display","none");
-         $("#input-sa .date-input").css("display","block");
-         
-         var saLimitDate = new Date("1944-01-01");
-         
-         if(dobObject < saLimitDate){
-         $("#input-sa .date-limit").css("display","block");
-         $("#input-sa .date-input").css("display","none");
-         }
-         
-         
-         var saCertificateDate = new Date("1999-11-01");
-         
-         if(dobObject < saCertificateDate){
-         $("#input-sa .certificate-number").css("display","none");
-         }
+       	  var saLimitDate = new Date("1944-01-01");
+     	  if(dobObject < saLimitDate){
+				 $("#sa-date-limit").css("display","inline");
+				 $("#input-sa").css("display","none");
+				 beforeDateLimit=true;
+			 } else {
+				  $("#input-sa").css("display","block");
+			 }
+
          
          }	
          
          if(state=="wa"){
          
-         $("#input-wa .date-limit").css("display","none");
-         $("#input-wa .date-input").css("display","block");
+        	 var waLimitDate = new Date("1841-01-01");
          
-         var waLimitDate = new Date("1841-01-01");
-         
-         if(dobObject < waLimitDate){
-         $("#input-wa .date-limit").css("display","block");
-         $("#input-wa .date-input").css("display","none");
-         }
-         
-         
-         var waCertificateDate = new Date("2017-29-03");
-         
-         if(dobObject < waCertificateDate){
-         $("#input-wa .certificate-number").css("display","none");
-         }
+			if(dobObject < waLimitDate){
+				 $("#wa-date-limit").css("display","inline");
+				 $("#input-wa").css("display","none");
+				 beforeDateLimit=true;
+			 } else {
+				  $("#input-wa").css("display","block");
+			 }
+
          
          }	
          
          
          if(state=="vic"){
          
-         $("#input-vic .date-limit").css("display","none");
-         $("#input-vic .date-input").css("display","block");
-         
-         var vicLimitDate = new Date("1929-01-01");
-         
-         if(dobObject < vicLimitDate){
-         $("#input-vic .date-limit").css("display","block");
-         $("#input-vic .date-input").css("display","none");
-         }
-         
-         
-         var vicCertificateDate = new Date("2017-29-03");
-         
-         if(dobObject < vicCertificateDate){
-         $("#input-vic .certificate-number").css("display","none");
-         }
+       		var vicLimitDate = new Date("1929-01-01");
+       		if(dobObject < vicLimitDate){
+				 $("#vic-date-limit").css("display","inline");
+				 $("#input-vic").css("display","none");
+				 beforeDateLimit=true;
+			 } else {
+				  $("#input-vic").css("display","block");
+			 }
+
          
          }				
          
          if(state=="tas"){
          
-         $("#input-tas .date-limit").css("display","none");
-         $("#input-tas .date-input").css("display","block");
+       		  var tasLimitDate = new Date("1970-01-01");
          
-         var tasLimitDate = new Date("1970-01-01");
-         
-         if(dobObject < tasLimitDate){
-         $("#input-tas .date-limit").css("display","block");
-         $("#input-tas .date-input").css("display","none");
-         }
-         
-         
-         var tasCertificateDate = new Date("2016-09-01");
-         
-         if(dobObject < tasCertificateDate){
-         $("#input-tas .certificate-number").css("display","none");
-         }
+       		 if(dobObject < tasLimitDate){
+				 $("#tas-date-limit").css("display","inline");
+				 $("#input-tas").css("display","none");
+				 beforeDateLimit=true;
+			 } else {
+				  $("#input-tas").css("display","block");
+			 }
+
          
          }
          
@@ -743,11 +700,11 @@
 			 if(dobObject < qldLimitDate){
 				 $("#qld-date-limit").css("display","inline");
 				 $("#input-qld").css("display","none");
+				 beforeDateLimit=true;
 			 } else {
-				  $("#input-qld .date-input").css("display","block");
+				  $("#input-qld").css("display","block");
 			 }
 
-			beforeDateLimit=true;
          
          }
 			 
