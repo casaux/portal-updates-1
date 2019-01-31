@@ -64,6 +64,12 @@
                   height:0;
                   width:0;
                   }
+				   
+				   #date-limit span{
+					   display:none;
+				   }
+				   
+				   
                </style>
                This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
             </div>
@@ -77,6 +83,86 @@
                         <li>ARN application</li>
                      </ul>
                   </nav>
+				   
+				   <br /> <br />
+				   
+				   <div id="section_validation_panelAustralianBirthCertificate" style="display: none;">
+					   
+					   <div id="validation-error">
+					   
+						      <div class="au-body au-page-alerts au-page-alerts--error" id="error_message_panelAustralianBirthCertificate" style="display: none;"><h3>There was a problem submitting the form</h3><p>Please check the form again before proceeding</p></div>
+
+                               <div class="au-body au-page-alerts au-page-alerts--success" id="success_message_panelAustralianBirthCertificate" style="display:none;"></div>
+
+                               <div class="au-body au-page-alerts au-page-alerts--warning" id="warning_message_panelAustralianBirthCertificate" style=""><h3>There was a problem verifying your birth certificate.</h3><p>Please review your details and try again.<br>You have <b>4 attempts</b> remaining.</p><p>Alternatively you can <a href="#" onclick="javascript: returnToPOIPrimarySelection ();">return to the previous screen</a> and select a different form of primary identification. Or <a href="#" onclick="javascript: enableAndNavigateToUploadPanel ('panelAustralianBirthCertificate', 'Australian Birth Certificate');">upload a certified copy of your documentation</a> for manual verification.</p></div>
+
+                              </div>
+					   
+					   </div>
+				   
+				   	 <div id="date-limit" style="display:none;">
+					   
+						    
+                               <div class="au-body au-page-alerts au-page-alerts--warning" id="warning_message_panelAustralianBirthCertificate" style="">
+								   
+								   <h3>Unfortunately we are unable to verify your birth certificate</h3>
+								   
+								   <p>We are unable to verify 
+								   		<span id="nsw-date-limit">
+									   
+											New South Wales birth certificates before 1 January 1914.
+									   
+									   </span>
+								   		<span id="tas-date-limit">
+											
+											 Tasmanian birth certificates before 1 January 1970.
+								   
+								   		</span>
+									   <span id="wa-date-limit">
+								   
+										   	 Western Australian birth certificates before 1 January 1841.
+										   	
+								   		</span>
+									   <span id="qld-date-limit">
+								   
+										    Queensland birth certificates before 1 January 1941.
+										   
+								   		</span>
+									   <span id="vic-date-limit">
+										   
+										    Victorian birth certificates before 1 January 1929.
+								   
+								   		</span>
+									   <span id="act-date-limit">
+										   
+										    Australian Capital Territory birth certificates before 1 January 1930 .
+								   
+								   
+								   		</span>
+									   <span id="sa-date-limit">
+										   
+										    South Australian birth certificates before 1 January 1944.
+								   
+								   		</span>
+									   <span id="nt-date-limit">
+										   
+										   Northern Territory birth certificates before 1 January 1870.
+								   
+								   		</span>
+								   
+								   </h3>
+						 
+						 </p>
+								  
+								   
+								   <p>You can <a href="#" onclick="javascript: returnToPOIPrimarySelection ();">return to the previous screen</a> and select a different form of primary identification or <a href="#" onclick="javascript: enableAndNavigateToUploadPanel ('panelAustralianBirthCertificate', 'Australian Birth Certificate');">upload a certified copy of your birth certificate</a> for manual verification.</p></div>
+
+                             
+					   </div>
+
+                            
+				   
+				   
                   <header class="au-header padding-bottom-1x" role="banner">
                      <h1 class="au-header-heading">Australian Birth Certificate</h1>
                      <a class="au-direction-link au-direction-link--left" href="arn4.html">Back</a>
@@ -131,25 +217,7 @@
 				   
 				   
 				   
-				   <div id="date-limit">
-				   
-				   
-				    <p class="au-callout date-limit">
-						
-						Sorry, only Queensland  birth certificates from 1st January 1941 can be verified online. 
-						
-						
-						
-						<a href="arn4.html">Please choose another type of identification</a> or alternatively you can upload a <a href="#">certified copy</a> of your birth certificate below.<br /><br />
-					
-					Accepted file types (with a 10mb maximum file size) are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png.<br />
-					<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
-					<label for="myFile">Choose a file</label>
-
-					<br />
-				   
-				   
-				   </div>
+				  
 				   
 				   
 				   
@@ -448,6 +516,16 @@
          </div>
       </main>
       <script>
+		  
+		  var display = window.location.hash.substr(1);
+		  if(display=="error"){
+			  
+			  $("#section_validation_panelAustralianBirthCertificate").css("display","block");
+			  
+			  
+		  }
+		  
+		  
          var state;
          var dob;
          var dobObject;
@@ -481,8 +559,7 @@
          dob = DD+"/"+MM+"/"+YYYY;
          	
          dobObject = new Date(YYYY+"-"+MM+"-"+DD);
-         
-         
+			          
          }
          
          state = $("#select-state option:selected").val();
@@ -500,24 +577,25 @@
          
              state = $("#select-state option:selected").val();
              $(".input-state").css("display", "none");
-         $("#input-nsw .certificate-number").css("display","block");
          
-             var showState = "#input-" + state;
-             $(showState).css("display", "block");
+             //var showState = "#input-" + state;
+            // $(showState).css("display", "block");
              $("#validate").css("display", "inline");
          
          getDOB();
          
+		var beforeDateLimit=false;
+			 
          if(state=="nsw"){
          
          $("#input-nsw .date-limit").css("display","none");
          $("#input-nsw .date-input").css("display","block");
          
-         var nswLimitDate = new Date("1914-01-01");
-         
+         var nswLimitDate = new Date("1914-01-01");	 
+			 
+			 
          if(dobObject < nswLimitDate){
-         $("#input-nsw .date-limit").css("display","block");
-         $("#input-nsw .date-input").css("display","none");
+         $("#nsw-date-limit").css("display","inline");
          }
          
          
@@ -658,24 +736,33 @@
          
          if(state=="qld"){
          
-         $("#input-qld .date-limit").css("display","none");
-         $("#input-qld .date-input").css("display","block");
+        
          
-         var qldLimitDate = new Date("1941-01-01");
-         
-         if(dobObject < tasLimitDate){
-         $("#input-qld .date-limit").css("display","block");
-         $("#input-qld .date-input").css("display","none");
-         }
-         
-         
-         var qldCertificateDate = new Date("2016-09-01");
-         
-         if(dobObject < qldCertificateDate){
-         $("#input-qld .certificate-number").css("display","none");
-         }
+			 var qldLimitDate = new Date("1941-01-01");
+
+			 if(dobObject < qldLimitDate){
+				 $("#qld-date-limit").css("display","inline");
+				 $("#input-qld").css("display","none");
+			 } else {
+				  $("#input-qld .date-input").css("display","block");
+			 }
+
+			beforeDateLimit=true;
          
          }
+			 
+			 
+			 
+		if(beforeDateLimit==true){
+			
+			$("#date-limit").css("display","block");
+			
+			 $([document.documentElement, document.body]).animate({
+						  	scrollTop: 0
+    					}, 500);
+			
+			
+		}
          
          
          });
