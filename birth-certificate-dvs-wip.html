@@ -816,7 +816,7 @@
 
 			 	// check for slash / year in older format NNNNNN/YYYY
 			 	if(slash > 0){
-					var act_reg_number = registration_number.substring(slash, registration_number.length);
+					var act_reg_number = registration_number.substring(slash+1,registration_number.length);
 					registration_number = act_reg_number;
 				}
          
