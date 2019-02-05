@@ -933,10 +933,16 @@
          
 				 // check year - if YY, then initiate district request
 				 var slash = registration_number.indexOf("/");
+				 
+				 // if no slash present, make number just number
+				 if(slash==-1){
+					 slash = registration_number.length;
+				 }
+				 
 				 var year = registration_number.substring(slash + 1, registration_number.length);
 				 var number = registration_number.substring(0, slash);
-				 
-				 if(year.length==2){
+				 				 
+				 if(year.length==2 || number.length < 7){
 					 
 					 
 					//...
@@ -951,8 +957,6 @@
 					 
 					 
 					 registration_number = $('#r-wa-registration-district-select').val() +""+ number;
-					 
-					 
 					 
 				 } else {
 					 registration_number = registration_number.substr(0,7);
