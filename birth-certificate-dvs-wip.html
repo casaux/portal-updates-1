@@ -767,7 +767,7 @@
 				 var slash = registration_number.indexOf("/");
 				 var year = registration_number.substring(slash + 1, registration_number.length);
 				 
-				 if(year.length==2){
+				 if(year.length==2 || (slash==-1 && registration_number.length < 6)){
 					 
 					 $('#r-wa-registration-district').fadeIn("slow");
 					 //$('#r-wa-registration-district').scrollTo();
